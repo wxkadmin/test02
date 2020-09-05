@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecit.sbm.mapper.CityMapper">
+  <insert id="save" parameterType="city" useGeneratedKeys="true" keyProperty="id">
+    insert into city(name, countrycode, district) values (#{name},#{countryCode},#{district});
+  </insert>
+  
+  
+  <select id="qryCity" parameterType="city" resultType="city">
+  	select * from city 
+  	<where>
+  		<if test="{id != null}">
+  			and id = #{id}
+  		</if>
+  	</where>
+  </select>
+</mapper>

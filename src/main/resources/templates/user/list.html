@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表页</title>
+</head>
+<body>
+<div>
+
+    <h3 th:text="${userList[0].name.substring(1,2)}">user/list</h3>
+    <ul th:each="user : ${userList}">
+        <li th:text="|姓名：${user.name} - 年龄： ${user.age}|">用户名称</li>
+    </ul>
+
+
+</div>
+</body>
+</html>
